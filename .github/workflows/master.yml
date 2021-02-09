@@ -14,13 +14,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      # - name: login
-      #   uses: docker/login-action@v1
-        # with: 
-        #   registry: ghcr.io
-        #   username: ${{ github.repository_owner }}
-        #   password: ${{ secrets.CR_PAT }}
+      - name: login
+        uses: docker/login-action@v1
+        with: 
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
       - name: Docker build
         run: docker build -t ghcr.io/modulus/user-diesel:latest .
-      # - name: Docker push
-      #   run: docker push ghcr.io/modulus/user-diesel:latest
+      - name: Docker push
+        run: docker push ghcr.io/modulus/user-diesel:latest
