@@ -7,11 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-
-  build:
-
+  package:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: login
