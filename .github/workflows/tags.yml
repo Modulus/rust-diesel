@@ -21,6 +21,6 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.CR_PATH }}
       - name: Docker build
-        run: docker build -t ghcr.io/modulus/user-diesel:${{ GITHUB_REF }} .
+        run: docker build -t ghcr.io/modulus/user-diesel:${{ env.GITHUB_REF }} .
       - name: Docker push
-        run: docker push ghcr.io/modulus/user-diesel:${{ GITHUB_REF }}
+        run: docker push ghcr.io/modulus/user-diesel:${{ env.GITHUB_REF }}
